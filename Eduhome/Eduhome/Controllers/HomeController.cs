@@ -24,26 +24,6 @@ namespace Eduhome.Controllers
             return View();
         }
 
-        public IActionResult Courses()
-        {
-            return View();
-        }
-
-        public IActionResult Teachers()
-        {
-            return View();
-        }
-
-        public IActionResult Event()
-        {
-            return View();
-        }
-
-        public IActionResult Blog()
-        {
-            return View();
-        }
-
         public IActionResult Privacy()
         {
             return View();

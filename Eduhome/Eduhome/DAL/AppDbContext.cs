@@ -14,5 +14,8 @@ namespace Eduhome.DAL
 
         }
         public DbSet<Caption> CourseCaptions { get; set; }
+        public DbSet<CourseDetails> CourseDetails { get; set; }
+        public DbSet<Teacher> Teacher { get; set; }
+        public DbSet<TeacherDetails> TeacherDetails { get; set; }
     }
 }

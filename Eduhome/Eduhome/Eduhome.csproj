@@ -7,6 +7,10 @@
   <ItemGroup>
     <Compile Remove="Migrations\20210518051236_CreateCourseTable.cs" />
     <Compile Remove="Migrations\20210518051236_CreateCourseTable.Designer.cs" />
+    <Compile Remove="Migrations\20210518112439_CreateTeacherTable.cs" />
+    <Compile Remove="Migrations\20210518112439_CreateTeacherTable.Designer.cs" />
+    <Compile Remove="Migrations\20210518115915_CreateTeacherTable.cs" />
+    <Compile Remove="Migrations\20210518115915_CreateTeacherTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -18,11 +22,33 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\front\fonts\et-line.svg" />
+    <None Include="wwwroot\front\fonts\fontawesome-webfont3e6e.svg" />
+    <None Include="wwwroot\front\fonts\fontawesome-webfont3e6e.woff2" />
+    <None Include="wwwroot\front\fonts\glyphicons-halflings-regular.svg" />
+    <None Include="wwwroot\front\fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="wwwroot\front\fonts\ionicons28b5.svg" />
+    <None Include="wwwroot\front\fonts\Material-Design-Iconic-Fontd1f1.woff2" />
+    <None Include="wwwroot\front\js\ajax-mail.js" />
+    <None Include="wwwroot\front\js\bootstrap.min.js" />
+    <None Include="wwwroot\front\js\jquery.magnific-popup.js" />
+    <None Include="wwwroot\front\js\jquery.mb.YTPlayer.js" />
+    <None Include="wwwroot\front\js\jquery.meanmenu.js" />
+    <None Include="wwwroot\front\js\jquery.nicescroll.min.js" />
+    <None Include="wwwroot\front\js\main.js" />
+    <None Include="wwwroot\front\js\owl.carousel.min.js" />
+    <None Include="wwwroot\front\js\plugins.js" />
+    <None Include="wwwroot\front\js\vendor\jquery-1.12.0.min.js" />
+    <None Include="wwwroot\front\js\vendor\modernizr-2.8.3.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.10" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.10">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
   </ItemGroup>
 
 </Project>

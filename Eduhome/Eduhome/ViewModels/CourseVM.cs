@@ -9,5 +9,6 @@ namespace Eduhome.ViewModels
     public class CourseVM
     {
         public Caption Caption { get; set; }
+        public CourseDetails CourseDetails { get; set; }
     }
 }
