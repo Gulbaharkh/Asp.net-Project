@@ -1,4 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Eduhome.DAL;
+using Eduhome.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +11,25 @@ namespace Eduhome.Controllers
 {
     public class EventController : Controller
     {
-        public IActionResult Index()
+        private readonly AppDbContext _db;
+        public EventController(AppDbContext db)
         {
-            return View();
+            _db = db;
+        }
+        public async Task<IActionResult> Index()
+        {
+            List<Event> events = await _db.Event.ToListAsync();
+
+            return View(events);
+        }
+        public IActionResult Details(int id)
+        {
+
+            EventDetails detail = _db.EventDetails.Include(det => det.Event).Include(x=>x.EventSpeakers).ThenInclude(x=>x.Speaker)
+                .FirstOrDefault(det => det.EventId == id);
+
+
+            return View(detail);
         }
     }
 }

@@ -17,5 +17,10 @@ namespace Eduhome.DAL
         public DbSet<CourseDetails> CourseDetails { get; set; }
         public DbSet<Teacher> Teacher { get; set; }
         public DbSet<TeacherDetails> TeacherDetails { get; set; }
+        public DbSet<Event> Event { get; set; }
+        public DbSet<EventDetails> EventDetails { get; set; }
+        public DbSet<Speaker> Speakers { get; set; }
+        public DbSet<EventSpeaker> EventSpeakers { get; set; }
+       
     }
 }
