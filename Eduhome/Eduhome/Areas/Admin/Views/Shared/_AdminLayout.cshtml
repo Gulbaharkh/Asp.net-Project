@@ -14,7 +14,6 @@
     <link rel="stylesheet" href="~/AdminPanel/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    @RenderBody()
     @RenderSection("Css", false)
     <link rel="stylesheet" href="~/AdminPanel/css/style.css">
     <!-- endinject -->
@@ -174,6 +173,12 @@
                         <a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="Index">
                             <i class="mdi mdi-home menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" asp-area="Admin" asp-controller="Course" asp-action="Index">
+                            <i class="mdi mdi-home menu-icon"></i>
+                            <span class="menu-title">Course</span>
                         </a>
                     </li>
                     <li class="nav-item">

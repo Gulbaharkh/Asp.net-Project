@@ -49,6 +49,18 @@
                                     <i class="fa fa-link"></i>
                                 </div>
                             </a>
+                            <a asp-controller="Course" asp-action="Delete" asp-route-id="@c.Id">
+                                <img src="~/front/img/course/@c.Image" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
+                            <a asp-controller="Course" asp-action="Update" asp-route-id="@c.Id">
+                                <img src="~/front/img/course/@c.Image" alt="course">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
+                                </div>
+                            </a>
                         </div>
                         <div class="course-content">
                             <h3><a asp-controller="Course" asp-action="Details" asp-route-id="@c.Id">@c.Title</a></h3>
