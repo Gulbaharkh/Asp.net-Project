@@ -34,7 +34,7 @@ namespace Eduhome.Areas.Admin.Controllers
             bool isExist = _context.Teacher.Any(c => c.Name.ToLower().Trim() == teacher.Name.ToLower().Trim());
             if (isExist)
             {
-                ModelState.AddModelError("Title", "Bu adda kurs var");
+                ModelState.AddModelError("Title", "The person already exists!");
                 return View();
             }
             await _context.AddRangeAsync(teacher, teacher.TeacherDetails);
@@ -94,7 +94,7 @@ namespace Eduhome.Areas.Admin.Controllers
             Caption captionDb = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Title.ToLower().Trim() == teacher.Name.ToLower().Trim());
             if (captionDb != null && captionDb.Id != id)
             {
-                ModelState.AddModelError("Course Name", "This category already exist.");
+                ModelState.AddModelError("Course Name", "This Course already exists!");
                 return View(teacherView);
             }
             teacherView.Name = teacher.Name;

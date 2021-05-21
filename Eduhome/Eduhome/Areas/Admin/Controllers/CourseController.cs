@@ -34,7 +34,7 @@ namespace Eduhome.Areas.Admin.Controllers
             bool isExist = _context.CourseCaptions.Any(c => c.Title.ToLower().Trim() == course.Title.ToLower().Trim());
             if (isExist)
             {
-                ModelState.AddModelError("Title", "Bu adda kurs var");
+                ModelState.AddModelError("Title", "This Course already exists!");
                 return View();
             }
             await _context.AddRangeAsync(course,course.CourseDetails);

@@ -155,7 +155,6 @@ C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Vie
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Contact\Index.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Course\Index.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Course\Details.cshtml.g.cs
-C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Details.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Event\Details.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_AdminLayout.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
@@ -169,3 +168,7 @@ C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Course\Update.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Index.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Create.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Delete.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Detail.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Update.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Details.cshtml.g.cs
