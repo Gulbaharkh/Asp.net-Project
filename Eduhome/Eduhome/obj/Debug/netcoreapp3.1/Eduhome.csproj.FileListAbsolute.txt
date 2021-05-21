@@ -164,3 +164,8 @@ C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Course\Index.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Course\Create.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\_ValidationPartial.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Course\Delete.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Course\Detail.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Course\Update.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Index.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Create.cshtml.g.cs

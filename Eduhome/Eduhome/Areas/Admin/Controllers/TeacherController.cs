@@ -10,17 +10,17 @@ using System.Threading.Tasks;
 namespace Eduhome.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class CourseController : Controller
+    public class TeacherController : Controller
     {
         private readonly AppDbContext _context;
-        public CourseController(AppDbContext context)
+        public TeacherController(AppDbContext context)
         {
             _context = context;
         }
         public IActionResult Index()
         {
-            List<Caption> courses = _context.CourseCaptions.Include(x=>x.CourseDetails).ToList();
-            return View(courses);
+            List<Teacher> teachers = _context.Teacher.Include(x => x.TeacherDetails).ToList();
+            return View(teachers);
         }
         public IActionResult Create()
         {
@@ -28,16 +28,16 @@ namespace Eduhome.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Caption course)
+        public async Task<IActionResult> Create(Teacher teacher)
         {
             if (!ModelState.IsValid) return View();
-            bool isExist = _context.CourseCaptions.Any(c => c.Title.ToLower().Trim() == course.Title.ToLower().Trim());
+            bool isExist = _context.Teacher.Any(c => c.Name.ToLower().Trim() == teacher.Name.ToLower().Trim());
             if (isExist)
             {
                 ModelState.AddModelError("Title", "Bu adda kurs var");
                 return View();
             }
-            await _context.AddRangeAsync(course,course.CourseDetails);
+            await _context.AddRangeAsync(teacher, teacher.TeacherDetails);
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
@@ -47,17 +47,17 @@ namespace Eduhome.Areas.Admin.Controllers
         {
 
             if (id == null) return NotFound();
-            Caption caption = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
-            if (caption == null) return NotFound();
-            return View(caption);
+            Teacher teacher = await _context.Teacher.FirstOrDefaultAsync(c => c.Id == id);
+            if (teacher == null) return NotFound();
+            return View(teacher);
         }
 
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            Caption caption = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
-            if (caption == null) return NotFound();
-            return View(caption);
+            Teacher teacher = await _context.Teacher.FirstOrDefaultAsync(c => c.Id == id);
+            if (teacher == null) return NotFound();
+            return View(teacher);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -65,9 +65,9 @@ namespace Eduhome.Areas.Admin.Controllers
         public async Task<IActionResult> DeletePost(int? id)
         {
             if (id == null) return NotFound();
-            Caption caption = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
-            if (caption == null) return NotFound();
-            _context.CourseCaptions.Remove(caption);
+            Teacher teacher = await _context.Teacher.FirstOrDefaultAsync(c => c.Id == id);
+            if (teacher == null) return NotFound();
+            _context.Teacher.Remove(teacher);
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
@@ -76,32 +76,31 @@ namespace Eduhome.Areas.Admin.Controllers
         {
 
             if (id == null) return NotFound();
-            Caption caption = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
-            if (caption == null) return NotFound();
-            return View(caption);
+            Teacher teacher = await _context.Teacher.FirstOrDefaultAsync(c => c.Id == id);
+            if (teacher == null) return NotFound();
+            return View(teacher);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id, Caption caption)
+        public async Task<IActionResult> Update(int? id, Teacher teacher)
         {
             if (id == null) return NotFound();
-            if (caption == null) return NotFound();
-            Caption captionView = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
+            if (teacher == null) return NotFound();
+            Teacher teacherView = await _context.Teacher.FirstOrDefaultAsync(c => c.Id == id);
             if (!ModelState.IsValid)
             {
-                return View(captionView);
+                return View(teacherView);
             }
-            Caption captionDb = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Title.ToLower().Trim() == caption.Title.ToLower().Trim());
+            Caption captionDb = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Title.ToLower().Trim() == teacher.Name.ToLower().Trim());
             if (captionDb != null && captionDb.Id != id)
             {
                 ModelState.AddModelError("Course Name", "This category already exist.");
-                return View(captionView);
+                return View(teacherView);
             }
-            captionView.Title = caption.Title;
-            captionView.Description = caption.Description;
+            teacherView.Name = teacher.Name;
+            teacherView.Position = teacher.Position;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
     }
 }
