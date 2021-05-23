@@ -31,5 +31,11 @@ namespace Eduhome.Controllers
 
             return View(detail);
         }
+        public async Task<IActionResult> Search(string search)
+        {
+            List<Event> events = await _db.Event.Where(c => c.Title.ToLower().Trim().Contains(search.ToLower().Trim())).ToListAsync();
+
+            return View(events);
+        }
     }
 }

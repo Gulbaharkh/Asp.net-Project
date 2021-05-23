@@ -8,7 +8,6 @@
         <div class="card">
             <div class="card-body">
                 <h4 class="card-title">Create</h4>
-
                 <form class="forms-sample" method="post">
                     <div class="form-group">
                         <label asp-for="Photo"></label>
@@ -16,19 +15,70 @@
                         <span class="text-danger" asp-validation-for="Photo"></span>
                     </div>
                     <div class="form-group">
-                        <label asp-for="Title">Name</label>
-                        <input asp-for="Title" class="form-control" id="exampleInputName1" placeholder="Name">
+                        <label asp-for="Title"></label>
+                        <input asp-for="Title" class="form-control">
                         <span class="text-danger" asp-validation-for="Title"></span>
-                        <textarea asp-for="Title" id="editor"></textarea>
                     </div>
                     <div class="form-group">
-                        <input asp-for="CourseDetails.CourseFee" class="form-control" id="exampleInputName1" placeholder="Name">
-                        <span class="text-danger" asp-validation-for="CourseDetails.CourseFee"></span>
-                        <textarea asp-for="CourseDetails.CourseFee" id="editor"></textarea>
-                        <label asp-for="CourseDetails.CourseFee">Price</label>
-
+                        <label asp-for="Description"></label>
+                        <textarea asp-for="Description"></textarea>
+                        <span class="text-danger" asp-validation-for="Description"></span>
                     </div>
-
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.AboutCourse"></label>
+                        <input asp-for="CourseDetails.AboutCourse" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.AboutCourse"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.HowToApply"></label>
+                        <input asp-for="CourseDetails.HowToApply" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.HowToApply"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.Certification"></label>
+                        <input asp-for="CourseDetails.Certification" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.Certification"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.Start"></label>
+                        <input asp-for="CourseDetails.Start" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.Start"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.Duration"></label>
+                        <input asp-for="CourseDetails.Duration" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.Duration"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.ClassDuration"></label>
+                        <input asp-for="CourseDetails.ClassDuration" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.ClassDuration"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.Level"></label>
+                        <input asp-for="CourseDetails.Level" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.Level"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.Language"></label>
+                        <input asp-for="CourseDetails.Language" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.Language"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.Students"></label>
+                        <input asp-for="CourseDetails.Students" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.Students"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.Assesments"></label>
+                        <input asp-for="CourseDetails.Assesments" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.Assesments"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CourseDetails.CourseFee"></label>
+                        <input asp-for="CourseDetails.CourseFee" class="form-control">
+                        <span class="text-danger" asp-validation-for="CourseDetails.CourseFee"></span>
+                    </div>
                     <button type="submit" class="btn btn-primary mr-2">Submit</button>
                     <a class="btn btn-light" asp-action="Index">Cancel</a>
                 </form>
@@ -42,6 +92,10 @@
     <partial name="_ValidationPartial" />
     <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
     <script>
-        ClassicEditor.create(document.querySelector('#editor')).catch(error => {console.error(error);});
+        ClassicEditor.create(document.querySelector('#Description')).catch(error => { console.error(error); });
+        ClassicEditor.create(document.querySelector('#CourseDetails_Certification')).catch(error => { console.error(error); });
+        ClassicEditor.create(document.querySelector('#CourseDetails_HowToApply')).catch(error => { console.error(error); });
+        ClassicEditor.create(document.querySelector('#CourseDetails_AboutCourse')).catch(error => { console.error(error); });
+                   /* ClassicEditor.create(document.querySelector('#Title')).catch(error => { console.error(error); });*/
     </script>
 }

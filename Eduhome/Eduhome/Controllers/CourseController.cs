@@ -22,14 +22,20 @@ namespace Eduhome.Controllers
             
             return View(courses);
         }
-        public IActionResult Details(int id)
+        public IActionResult Details(int? id)
         {
-
+            if (id == null) return RedirectToAction("Index");
             CourseDetails detail = _db.CourseDetails.Include(det=>det.Caption)
                 .FirstOrDefault(det=>det.CaptionId==id);
+            if (detail == null) return RedirectToAction("Index");
 
-           
             return View(detail);
+        }
+        public async Task<IActionResult> Search(string search)
+        {
+            List<Caption> courses = await _db.CourseCaptions.Where(c=>c.Title.ToLower().Trim().Contains(search.ToLower().Trim())).ToListAsync();
+            
+            return View(courses);
         }
     }
 }

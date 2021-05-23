@@ -172,3 +172,11 @@ C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Detail.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Teacher\Update.cshtml.g.cs
 C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Details.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Event\Create.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Event\Delete.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Event\Detail.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Event\Index.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Event\Update.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Course\Search.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Event\Search.cshtml.g.cs
+C:\Users\Gulbahar\source\repos\Eduhome\Eduhome\obj\Debug\netcoreapp3.1\Razor\Views\Teacher\Search.cshtml.g.cs

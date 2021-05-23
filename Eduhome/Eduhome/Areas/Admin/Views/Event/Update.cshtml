@@ -1,0 +1,62 @@
+﻿@model Event
+@{
+    ViewData["Title"] = "Update";
+}
+
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Create</h4>
+
+                <form class="forms-sample" method="post">
+                    <div class="form-group">
+                        <label asp-for="Photo"></label>
+                        <input asp-for="Photo" accept="image/*" class="form-control">
+                        <span class="text-danger" asp-validation-for="Photo"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Title">Name</label>
+                        <input asp-for="Title" class="form-control" placeholder="Name">
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="StartTime">Start Time</label>
+                        <input asp-for="StartTime" class="form-control">
+                        <span class="text-danger" asp-validation-for="Title"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EndTime">End Time</label>
+                        <input asp-for="EndTime" class="form-control">
+                        <span class="text-danger" asp-validation-for="EndTime"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Venue">Venue</label>
+                        <input asp-for="Venue" class="form-control">
+                        <span class="text-danger" asp-validation-for="Venue"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EventDetails.Description">Description</label>
+                        <input asp-for="EventDetails.Description" class="form-control">
+                        <span class="text-danger" asp-validation-for="EventDetails.Description"></span>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                    <a class="btn btn-light" asp-action="Index">Cancel</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+@section Script
+{
+    <partial name="_ValidationPartial" />
+    <script src="https://cdn.ckeditor.com/ckeditor5/27.0.0/classic/ckeditor.js"></script>
+    <script>
+       ClassicEditor
+           .create(document.querySelector('#editor'))
+           .catch(error => {
+               console.error(error);
+           });
+    </script>
+}

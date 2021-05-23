@@ -25,35 +25,48 @@
 <div class="event-area three text-center pt-150 pb-150">
     <div class="container">
         <div class="row">
+            <div class="col-xs-12">
+                <div class="event-title">
+                    <h3>search events</h3>
+                </div>
+                <div class="course-form">
+                    <form asp-controller="Event" asp-action="Search" id="event-search">
+                        <input type="search" placeholder="Search..." name="search" id="event-input" />
+                        <button type="submit">search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             @foreach (Event e in events)
-	            {
-                    <div class="col-md-4 col-sm-6 col-xs-12">
-                        <div class="single-event mb-60">
-                            <div class="event-img">
-                                <a asp-controller="Event" asp-action="Details" asp-route-id="@e.Id">
-                                    <img src="~/front/img/event/@e.Image" alt="event">
-                                    <div class="course-hover">
-                                        <i class="fa fa-link"></i>
-                                    </div>
-                                </a>
-                                <div class="event-date">
-                                    <h3>20 <span>jun</span></h3>
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="single-event mb-60">
+                        <div class="event-img">
+                            <a asp-controller="Event" asp-action="Details" asp-route-id="@e.Id">
+                                <img src="~/front/img/event/@e.Image" alt="event">
+                                <div class="course-hover">
+                                    <i class="fa fa-link"></i>
                                 </div>
+                            </a>
+                            <div class="event-date">
+                                <h3>20 <span>jun</span></h3>
                             </div>
-                            <div class="event-content text-left">
-                                <h4><a asp-controller="Event" asp-action="Details" asp-route-id="@e.Id">@e.Title</a></h4>
-                                <ul>
-                                    <li><span>time:</span> 9.00 AM - 4.45 PM</li>
-                                    <li><span>venue</span>@e.Venue</li>
-                                </ul>
-                                <div class="event-content-right">
-                                    <a class="default-btn" asp-controller="Event" asp-action="Details" asp-route-id="@e.Id">join now</a>
-                                </div>
+                        </div>
+                        <div class="event-content text-left">
+                            <h4><a asp-controller="Event" asp-action="Details" asp-route-id="@e.Id">@e.Title</a></h4>
+                            <ul>
+                                <li><span>time:</span> 9.00 AM - 4.45 PM</li>
+                                <li><span>venue</span>@e.Venue</li>
+                            </ul>
+                            <div class="event-content-right">
+                                <a class="default-btn" asp-controller="Event" asp-action="Details" asp-route-id="@e.Id">join now</a>
                             </div>
                         </div>
                     </div>
-	            }
-            
+                </div>
+            }
+
         </div>
     </div>
 </div>

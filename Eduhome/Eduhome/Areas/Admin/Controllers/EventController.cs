@@ -28,16 +28,16 @@ namespace Eduhome.Areas.Admin.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(Caption course)
+        public async Task<IActionResult> Create(Event events)
         {
             if (!ModelState.IsValid) return View();
-            bool isExist = _context.CourseCaptions.Any(c => c.Title.ToLower().Trim() == course.Title.ToLower().Trim());
+            bool isExist = _context.Event.Any(c => c.Title.ToLower().Trim() == events.Title.ToLower().Trim());
             if (isExist)
             {
-                ModelState.AddModelError("Title", "This Course already exists!");
+                ModelState.AddModelError("Title", "This Event already exists!");
                 return View();
             }
-            await _context.AddRangeAsync(course, course.CourseDetails);
+            await _context.AddRangeAsync(events, events.EventDetails);
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
@@ -47,17 +47,18 @@ namespace Eduhome.Areas.Admin.Controllers
         {
 
             if (id == null) return NotFound();
-            Caption caption = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
-            if (caption == null) return NotFound();
-            return View(caption);
+            Event events = await _context.Event.FirstOrDefaultAsync(c => c.Id == id);
+            if (events == null) return NotFound();
+            return View(events);
+            
         }
 
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null) return NotFound();
-            Caption caption = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
-            if (caption == null) return NotFound();
-            return View(caption);
+            Event events = await _context.Event.FirstOrDefaultAsync(c => c.Id == id);
+            if (events == null) return NotFound();
+            return View(events);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -65,9 +66,9 @@ namespace Eduhome.Areas.Admin.Controllers
         public async Task<IActionResult> DeletePost(int? id)
         {
             if (id == null) return NotFound();
-            Caption caption = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
-            if (caption == null) return NotFound();
-            _context.CourseCaptions.Remove(caption);
+            Event events = await _context.Event.FirstOrDefaultAsync(c => c.Id == id);
+            if (events == null) return NotFound();
+            _context.Event.Remove(events);
             await _context.SaveChangesAsync();
 
             return RedirectToAction(nameof(Index));
@@ -76,29 +77,29 @@ namespace Eduhome.Areas.Admin.Controllers
         {
 
             if (id == null) return NotFound();
-            Caption caption = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
-            if (caption == null) return NotFound();
-            return View(caption);
+            Event events = await _context.Event.FirstOrDefaultAsync(c => c.Id == id);
+            if (events == null) return NotFound();
+            return View(events);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Update(int? id, Caption caption)
+        public async Task<IActionResult> Update(int? id, Event events)
         {
             if (id == null) return NotFound();
-            if (caption == null) return NotFound();
-            Caption captionView = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Id == id);
+            if (events == null) return NotFound();
+            Event eventView = await _context.Event.FirstOrDefaultAsync(c => c.Id == id);
             if (!ModelState.IsValid)
             {
-                return View(captionView);
+                return View(eventView);
             }
-            Caption captionDb = await _context.CourseCaptions.FirstOrDefaultAsync(c => c.Title.ToLower().Trim() == caption.Title.ToLower().Trim());
-            if (captionDb != null && captionDb.Id != id)
+            Event eventsDb = await _context.Event.FirstOrDefaultAsync(c => c.Title.ToLower().Trim() == events.Title.ToLower().Trim());
+            if (eventsDb != null && eventsDb.Id != id)
             {
                 ModelState.AddModelError("Course Name", "This category already exist.");
-                return View(captionView);
+                return View(eventView);
             }
-            captionView.Title = caption.Title;
-            captionView.Description = caption.Description;
+            eventView.Title = events.Title;
+            eventView.Photo = events.Photo;
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }

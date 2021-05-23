@@ -1,9 +1,12 @@
 ﻿using Eduhome.DAL;
+using Eduhome.Extensions;
 using Eduhome.Models;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -13,9 +16,11 @@ namespace Eduhome.Areas.Admin.Controllers
     public class CourseController : Controller
     {
         private readonly AppDbContext _context;
-        public CourseController(AppDbContext context)
+        private readonly IWebHostEnvironment _env;
+        public CourseController(AppDbContext context, IWebHostEnvironment env)
         {
             _context = context;
+            _env = env;
         }
         public IActionResult Index()
         {
@@ -30,13 +35,21 @@ namespace Eduhome.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Caption course)
         {
+            
             if (!ModelState.IsValid) return View();
+            if (course.Photo == null) {
+                ModelState.AddModelError("Photo", "Please take Photo");
+                return View();
+            }
+            string folder = Path.Combine("front", "img", "course");
+            string filename = await course.Photo.SaveFileAsync(_env.WebRootPath, folder);
             bool isExist = _context.CourseCaptions.Any(c => c.Title.ToLower().Trim() == course.Title.ToLower().Trim());
             if (isExist)
             {
                 ModelState.AddModelError("Title", "This Course already exists!");
                 return View();
             }
+            course.Image = filename;
             await _context.AddRangeAsync(course,course.CourseDetails);
             await _context.SaveChangesAsync();
 

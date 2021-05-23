@@ -31,5 +31,11 @@ namespace Eduhome.Controllers
 
             return View(detail);
         }
+        public async Task<IActionResult> Search(string search)
+        {
+            List<Teacher> teachers = await _db.Teacher.Where(c => c.Name.ToLower().Trim().Contains(search.ToLower().Trim())).ToListAsync();
+
+            return View(teachers);
+        }
     }
 }

@@ -1,6 +1,6 @@
 ﻿
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Search Course";
     List<Caption> courses = Model;
 }
 
@@ -31,33 +31,33 @@
                 </div>
                 <div class="course-form">
                     <form asp-controller="Course" asp-action="Search" id="course-search">
-                        <input type="search" placeholder="Search..." name="search" id="course-input" />
+                        <input type="search" placeholder="Search..." name="search" id="course-input"/>
                         <button type="submit">search</button>
                     </form>
                 </div>
             </div>
         </div>
         <div class="row">
-            @foreach (Caption c in courses)
-            {
-                <div class="col-md-4 col-sm-6 col-xs-12">
-                    <div class="single-course mb-70">
-                        <div class="course-img">
-                            <a asp-controller="Course" asp-action="Details" asp-route-id="@c.Id">
-                                <img src="~/front/img/course/@c.Image" alt="course">
-                                <div class="course-hover">
-                                    <i class="fa fa-link"></i>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="course-content">
-                            <h3><a asp-controller="Course" asp-action="Details" asp-route-id="@c.Id">@c.Title</a></h3>
-                            <p>@c.Description</p>
-                            <a class="default-btn" asp-controller="Course" asp-action="Details" asp-route-id="@c.Id">read more</a>
+                @foreach (Caption c in courses)
+                {
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="single-course mb-70">
+                            <div class="course-img">
+                                <a asp-controller="Course" asp-action="Details" asp-route-id="@c.Id">
+                                    <img src="~/front/img/course/@c.Image" alt="course">
+                                    <div class="course-hover">
+                                        <i class="fa fa-link"></i>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="course-content">
+                                <h3><a asp-controller="Course" asp-action="Details" asp-route-id="@c.Id">@c.Title</a></h3>
+                                <p>@c.Description</p>
+                                <a class="default-btn" asp-controller="Course" asp-action="Details" asp-route-id="@c.Id">read more</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-            }
+                }
 
         </div>
     </div>
